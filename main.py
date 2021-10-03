@@ -24,5 +24,5 @@ def initCam():
 # initCam()
 
 # Test Functions
-detect_grid_test("./arena.png") # image: actual arena
+detect_grid_test("./images/arena.png") # image: actual arena
 # detect_aruco_test("./images/aruco_marker.png")
