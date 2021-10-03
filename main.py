@@ -10,11 +10,11 @@ def detect_aruco_and_send_command(frame, robot, smallest_path):
   robot_id = robot["id"]
   endpoint = robot["endpoint"]
   turn_point = get_turn_point(robot_id)
-  for i in range(65, 69):
+  for i in [66, 87, 70, 24]:
     robot_position = detect_aruco(frame, i, smallest_path)
-    if robot_position == turn_point and robot_id in [65, 66]:
+    if robot_position == turn_point and robot_id in [66, 87]:
       requests.get(endpoint + "/rotate/right/90")
-    elif robot_position == turn_point and robot_id in [67, 68]:
+    elif robot_position == turn_point and robot_id in [70, 24]:
       requests.get(endpoint + "/rotate/left/90")
     elif robot_position == get_robot_drop_point(robot_id):
       requests.get(endpoint + "/stop")
@@ -24,11 +24,11 @@ def detect_aruco_and_send_command(frame, robot, smallest_path):
         requests.get(endpoint + "/retract")
         robot["isDropped"] = True
       else:
-        if robot["id"] == 65:
+        if robot["id"] == 87:
           initCam(1)
-        elif robot["id"] == 66:
+        elif robot["id"] == 70:
           initCam(2)
-        elif robot["id"] == 67:
+        elif robot["id"] == 24:
           initCam(3)
     else:
       requests.get(endpoint + "/move/forward")
@@ -37,7 +37,6 @@ def detect_aruco_and_send_command(frame, robot, smallest_path):
 def captureContourCenter(frame,robot):
   contour_list = detect_grid(frame)
   sorted_matrix = sort_contour_list_to_matrix(contour_list)
-  smallest_path_list = []
   smallest_path_list = get_smallest_path_aStar(sorted_matrix,robot["coord"][0],robot["coord"][1])
   detect_aruco_and_send_command(frame,robot,smallest_path_list)
   # print(contours)
@@ -49,7 +48,7 @@ def initCam(robot_index):
     ret, frame = vid.read()
     captureContourCenter(frame,robot_path_position_matrix[robot_index])
     
-    if cv2.waitKey(300) & 0xFF == ord('q'):
+    if cv2.waitKey(300) & 0xFF == ord('q'): # 3.33 fps
         break
     
   vid.release()
