@@ -11,12 +11,12 @@ distortion_coefficients=np.array([[-0.05738903,  0.98552337, -0.038323, 0.016824
 aruco_5 = aruco.DICT_5X5_250
 
 
-def detect_aruco(frame):
+def detect_aruco(frame, ind, smallest_path):
   gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
   aruco_dict = aruco.Dictionary_get(aruco_5)
   parameters = aruco.DetectorParameters_create()
   corners, ids, rejected_img_points = aruco.detectMarkers(gray, aruco_dict, parameters=parameters, cameraMatrix=matrix_coefficients, distCoeff=distortion_coefficients)
-  if np.all(ids is not None):
+  if np.all(ids is not None) and ids == ind:
     for i in range(0, len(ids)):
       rvec, tvec, markerPoints = aruco.estimatePoseSingleMarkers(corners[i], 0.02, matrix_coefficients, distortion_coefficients)
       (rvec - tvec).any()
@@ -25,6 +25,7 @@ def detect_aruco(frame):
   # cv2.imshow('frame', frame)
   # key = cv2.waitKey(0) & 0xFF
   # cv2.destroyAllWindows()
+  print (smallest_path)
 
 def detect_aruco_test(image_src):
   frame = cv2.imread(image_src)
