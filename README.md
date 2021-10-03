@@ -51,5 +51,6 @@ Power Supply (9V) -> ESP (Vin & common ground)
 * Arucoxyz Script: It detects Aruco Markers and also helps in calculating angle for turning at the intersection points
 * Grid Detection: It detects the cells
 
+![image](https://user-images.githubusercontent.com/56999226/135768067-998b4228-a588-48e0-b3e3-cf5857cd9fb2.png)
 
 
