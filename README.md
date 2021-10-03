@@ -3,6 +3,9 @@
 ## Introduction
 This is our submission repository for the Flipkart Grid 3.0 Robotics Challenge. We were asked to create 4 robots, that can autonomously drop cargo at the designated spots. We started off with a lot of brainstorming sessions, worked out different approaches, to finally test out the approach that we found the best. We started off by purchasing the required hardware, and then building the robots on cardboard pieces. The hardware team used their innovative ideas to create the most appropriate bots suited for this role. While the software team, then started off with the coding, that runs the robots on the grid. This was done with OpenCV, Arduino IDE, and various python libraries. We will be detailing all the tools used, further in the documentation.
 
+![image](https://user-images.githubusercontent.com/56999226/135768137-560cbd8a-72e3-4647-ae8f-d864306d8e5f.png)
+
+
 ## Technolgies used
 * OpenCV
 * Arduino
@@ -13,6 +16,9 @@ This is our submission repository for the Flipkart Grid 3.0 Robotics Challenge. 
 * It is a machine learning module, by means of which we perform tasks such as object detection and positioning, and basically everything related to computer vision.
 * We used it for object positioning, angle calculation and detection between the robot movement axis, and the grid axis, which helped us to determine the direction of movement for robots.
 * OpenCv is basically the soul of our project.
+
+![image](https://user-images.githubusercontent.com/56999226/135768168-5ca3c416-89fe-4967-a65f-45a53129c8ef.png)
+
 
 ## Tools and Algorithms
 * A-Star Algorithm: The A* search algorithm, builds on the principles of Dijkstra’s shortest path algorithm to provide a faster solution when faced with the problem of finding the shortest path between two nodes. It achieves this by introducing a heuristic element to help decide the next node to consider as it moves along the path. 
