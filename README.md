@@ -4,6 +4,15 @@
 This is our submission repository for the Flipkart Grid 3.0 Robotics Challenge. We were asked to create 4 robots, that can autonomously drop cargo at the designated spots. We started off with a lot of brainstorming sessions, worked out different approaches, to finally test out the approach that we found the best. We started off by purchasing the required hardware, and then building the robots on cardboard pieces. The hardware team used their innovative ideas to create the most appropriate bots suited for this role. While the software team, then started off with the coding, that runs the robots on the grid. This was done with OpenCV, Arduino IDE, and various python libraries. We will be detailing all the tools used, further in the documentation.
 
 ## Technolgies used
+* OpenCV
+* Arduino
+* ESP
+* Communication using HTTP protocol
+
+## OpenCv
+* It is a machine learning module, by means of which we perform tasks such as object detection and positioning, and basically everything related to computer vision.
+* We used it for object positioning, angle calculation and detection between the robot movement axis, and the grid axis, which helped us to determine the direction of movement for robots.
+* OpenCv is basically the soul of our project.
 
 ## Tools and Algorithms
 * A-Star Algorithm: The A* search algorithm, builds on the principles of Dijkstra’s shortest path algorithm to provide a faster solution when faced with the problem of finding the shortest path between two nodes. It achieves this by introducing a heuristic element to help decide the next node to consider as it moves along the path. 
@@ -39,13 +48,8 @@ Power Supply (9V) -> ESP (Vin & common ground)
 
 ## Software
 * Camera Calibration Script: Camera calibration is the process where we detect aruco of different Id’s. Implementing Homography for estimation of intrinsic and extrinsic camera calibration parameters and inclusion of Pose Estimation for the implementation of augmented Reality projects in further future projects. 
+* Arucoxyz Script: It detects Aruco Markers and also helps in calculating angle for turning at the intersection points
+* Grid Detection: It detects the cells
 
-## Running code name and path:
-Camera calibration:
-Flipkart-grid-challenge>Testing>poco_cameraCalibration.py
-Angel Calculation:
-Flipkart-grid-challenge>Testing>angleCalc.py
-Aruco Axis:
-Flipkart-grid-challenge>Testing>arucoAxis.py
 
 
